@@ -1,0 +1,80 @@
+/* pages/detail/components/scroll_x_wine/scroll_x_wine.wxss */
+@import "/css/flex.wxss";
+.hot-card-bg {
+  background: #9C720E;
+  width: 100%;
+  height: 300rpx;
+  clip-path: ellipse(90% 60% at 35% 35%);
+}
+.hot-rate {
+  height: 170rpx;
+  width: 170rpx;
+  margin-left: 100rpx;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: 240rpx;
+}
+.hot-rate .retatop{
+  padding-top: 30rpx !important;
+}
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+.scroll_w {
+  margin-top: 30px;
+  /* 不换行 */
+  white-space: nowrap;
+}
+
+.scroll_w .scroll-box {
+  display: inline-block;
+  width: 280rpx;
+  height: 620rpx;
+  margin: 0 30rpx;
+}
+
+.scroll_wine_image {
+  width: 200rpx;
+  height: 480rpx;
+}
+.scroll_wine_image image {
+  width: 200rpx;
+  height: 480rpx;
+}
+.scroll_photo_image {
+  width: 240rpx;
+  height: 480rpx;
+}
+.scroll_photo_image image{
+  width: 240rpx;
+  height: 480rpx;
+}
+/* 去掉滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.bt_txet{
+  font-size: 28rpx;
+  white-space:pre-wrap;
+}
+.tx-ct{
+  text-align: center;
+}
+.clr-999{
+  color: #999;
+}
+.ft-se-14{
+  font-size: 28rpx;
+}
+.ft-se-12{
+  font-size: 24rpx;
+}

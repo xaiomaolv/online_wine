@@ -1,0 +1,49 @@
+<!--pages/detail/index/components/blurbLabel/blurbLabel.wxml-->
+<!-- 简介 -标签 -->
+<view>
+  <view class="mg-15-25 tx-ct ft-se-14">
+    <view wx:if="{{detailInfo.regionName}}">
+      产区
+      <view class="row mg-tp-5">
+        <view class="row btn_mini">
+          <image wx:if="{{detailInfo.countryCode}}" src="/img/countries/{{detailInfo.countryCode}}.svg" mode="aspectFit" class="nationFlag" />
+          <view class="mg-lt-5">{{detailInfo.regionName}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="mg-5" wx:if="{{detailInfo.wineryName}}">
+      <view>酒庄</view>
+      <view class="btn_mini mg-5">
+        <view>{{detailInfo.wineryName}}</view>
+      </view>
+    </view>
+    <view class="mg-5" wx:if="{{detailInfo.style}}">
+      <view>风格</view>
+      <view class="btn_mini mg-5">
+        <view>{{detailInfo.style}}</view>
+      </view>
+    </view>
+    <view class="mg-5" wx:if="{{detailInfo.grapes.length>0}}">
+      <view>葡萄品种</view>
+      <view class="btn_mini mg-5" wx:for="{{detailInfo.grapes && detailInfo.grapes}}" wx:key="index">
+        <view>{{ item.grapesName || '-' }}</view>
+      </view>
+    </view>
+    <view class="mg-5" wx:if="{{detailInfo.typeName}}">
+      <view>类型</view>
+      <view class="mg-5">{{detailInfo.typeName}}</view>
+    </view>
+    <view class="mg-5" wx:if="{{detailInfo.flavor}}">
+      <view>风味</view>
+      <view class="mg-5">{{detailInfo.flavor}}</view>
+    </view>
+    <view class="mg-5" wx:if="{{detailInfo.alcohol}}">
+      <view>酒精度</view>
+      <view class="mg-5">{{detailInfo.alcohol}}%vol</view>
+    </view>
+    <view class="mg-5" wx:if="{{detailInfo.weetness}}">
+      <view>甜度</view>
+      <view class="mg-5">{{detailInfo.weetness}}</view>
+    </view>
+  </view>
+</view>

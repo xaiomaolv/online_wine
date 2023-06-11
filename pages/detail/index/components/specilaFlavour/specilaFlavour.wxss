@@ -1,0 +1,22 @@
+/* pages/detail/index/components/specilaFlavour/specilaFlavour.wxss */
+@import "/css/flex.wxss";
+.mg-10-15 {
+  margin: 20rpx 30rpx;
+}
+.mg-0-15 {
+  margin: 0 30rpx;
+}
+/* 展开收缩 */
+.hiddenmore .more-item {
+  display: none;
+}
+
+.map:first-child {
+  border-radius: 12px;
+}
+
+.showmore .more-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}

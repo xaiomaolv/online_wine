@@ -1,0 +1,63 @@
+<!--pages/home/home.wxml-->
+<canvas id="myCanvas" canvas-id="myCanvas"  hidden='{{cameraImg}}' />
+<image hidden='{{!cameraImg}}' src="{{cameraImg}}" style="width:100%;height:100vh" />
+<camera id="cemeraHeight" device-position="back" flash="auto" style="width:100%; height:89vh">
+  <view style="height: {{navObj}}px;padding-top: {{navTop}}px;padding-right:{{navObjWidth}}px;">
+    <view class="head-back flex-row" style="height: {{navObj}}px;" catchtap="handleBackClick">
+    </view>
+  </view>
+  <view class="" style="height: {{navTop}}px;display: flex;justify-content: flex-end;margin-right: 40rpx;" bindtap="seeTutorial">
+    <van-icon name="/img/scan/tips.png" size="24" />
+  </view>
+  <!-- 拍照范围 -->
+  <view id="takephoto">
+    <cover-image id="cover_image" class='bgImage' src="{{isFirst ? '/img/scan/bkf.png':'/img/scan/bk.png'}}" style="width:90%;margin:auto;height: 46vh;">
+    </cover-image>
+  </view>
+
+  <!-- 识别图片-->
+  <view>
+    <view wx:if="{{imglist.length > 0}}">
+      <scroll-view scroll-x class="scrolls">
+        <view class="scroll-box" style="width:25%;margin:30rpx 10rpx 40rpx 10rpx;border-radius: 15rpx;padding: 10rpx;" wx:for="{{imglist}}" wx:key="index" data-item="{{item}}">
+          <!-- <view data-item="{{item}}" data-index="{{index}}" bindtouchstart='touchstart' bindtouchmove='touchmove' bindtouchend='touchend' animation="{{item.aniMation}}"> -->
+            <view data-item="{{item}}" data-index="{{index}}">
+            <view class="flex-row-center ft-bd-600">
+              <view wx:if="{{item.vintageRate > 0}}" class="center_btn tx-ct">
+                <text>{{item.vintageRate}}</text>
+              </view>
+              <view wx:else class="center_rates tx-ct">
+                <text>暂无评分</text>
+              </view>
+            </view>
+            <view id="delBox" style="border-radius: 15rpx;border: 1rpx solid rgb(141, 138, 138);padding: 4rpx;background: rgba(0, 0, 0, 0.4);" data-item="{{item}}" bindtap="toDetail">
+              <image src="{{imgUrl}}{{item.img}}" mode="aspectFit" style="width: 100%;border-radius: 15rpx;height: 16vh"></image>
+              <view wx:if="{{item.price > 0}}" class="tx-ct ft-se-12 ft-bd-600 clr-FFF">¥{{item.price}}</view>
+              <view wx:else class="tx-ct ft-se-12 ft-bd-600 clr-FFF">价格未知</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view wx:else>
+      <view style="width:25%;margin:40rpx 10rpx 40rpx 10rpx;border-radius: 15rpx;padding: 10rpx;position: absolute;bottom: 0rpx;right: 0;">
+        <view id="delBox" bindtap="seeTutorial">
+          <view style="border-radius: 15rpx;border: 1rpx solid rgb(141, 138, 138);padding: 4rpx;background: rgba(0, 0, 0, 0.4);">
+            <view class="tx-ct ft-se-12 ft-bd-600 clr-FFF">酒标示例</view>
+            <image src="/img/scan/wine_tip.png" mode="aspectFit" style="width: 100%;border-radius: 15rpx;height: 16vh"></image>
+            <view class="tx-ct ft-se-12 ft-bd-600 clr-FFF">查看攻略</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</camera>
+<!-- 拍照按钮 -->
+<view class='camera_bottom'>
+  <view class="cancelphoto"></view>
+  <image class='takephoto' src='/img/scan/pz.png' bindtap='takePhotoAction'></image>
+  <image class='skipphoto ' src='/img/scan/xc.png' bindtap='chooseImg'></image>
+</view>
+
+<!-- 扫酒结果 -->
+<scanResult style="z-index: 99;" imgInfo="{{imgInfo}}" isToken="{{isToken}}" wineInfo="{{wineInfo}}" identifying="{{identifying}}" cameraImg="{{cameraImg}}" class="scanResult" bind:cancel='handleCancel' bind:tryAgain='handleAgain' bind:getAuthPhone='handleAuthPhone' bind:toDetail='handleToDetail'></scanResult>

@@ -1,0 +1,22 @@
+{
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "projectname": "wine_mini",
+  "setting": {
+    "compileHotReLoad": true,
+    "urlCheck": false
+  },
+  "libVersion": "2.32.1",
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "",
+          "pathName": "pages/detail/index/index",
+          "query": "uuid=139a7757-4617-11ec-8373-066b4187bf04",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<!--pages/detail/index/components/decanteTime/decanteTime.wxml-->
+<!-- 醒酒时间 -->
+<view class="row tx-ct mg-10-0">
+  <view class="flex-col-4 ft-se-12">10分钟</view>
+  <view class="flex-col-16">
+    <van-slider class="" disabled value="{{ (decanteTime.tenMinutes / decanteTime.sum)* 100 || 0}}" min="0" inactive-color="#EBEDF0" active-color="#B81728" use-button-slot bar-height="10px">
+    </van-slider>
+  </view>
+  <view class="flex-col-4 ft-se-12 clr-999">{{decanteTime.tenMinutes}}</view>
+</view>
+<view class="row tx-ct mg-10-0">
+  <view class="flex-col-4 ft-se-12">30分钟</view>
+  <view class="flex-col-16">
+    <van-slider class="" disabled value="{{ (decanteTime.thirtyMinutes/ decanteTime.sum)* 100 || 0}}" min="0" inactive-color="#EBEDF0" active-color="#B81728" use-button-slot bar-height="10px">
+    </van-slider>
+  </view>
+  <view class="flex-col-4 ft-se-12 clr-999">{{decanteTime.thirtyMinutes}}</view>
+</view>
+<view class="row tx-ct mg-10-0">
+  <view class="flex-col-4 ft-se-12">1小时</view>
+  <view class="flex-col-16">
+    <van-slider class="" disabled value="{{ (decanteTime.oneHour/ decanteTime.sum)* 100 || 0}}" min="0" inactive-color="#EBEDF0" active-color="#B81728" use-button-slot bar-height="10px">
+    </van-slider>
+  </view>
+  <view class="flex-col-4 ft-se-12 clr-999">{{decanteTime.oneHour}}</view>
+</view>
+<view class="row tx-ct mg-10-0">
+  <view class="flex-col-4 ft-se-12">2小时</view>
+  <view class="flex-col-16">
+    <van-slider class="" disabled value="{{ (decanteTime.twoHours/ decanteTime.sum)* 100 || 0}}" min="0" inactive-color="#EBEDF0" active-color="#B81728" use-button-slot bar-height="10px">
+    </van-slider>
+  </view>
+  <view class="flex-col-4 ft-se-12 clr-999">{{decanteTime.twoHours}}</view>
+</view>
+<view class="row tx-ct mg-10-0">
+  <view class="flex-col-4 ft-se-12">4小时</view>
+  <view class="flex-col-16">
+    <van-slider class="" disabled value="{{ (decanteTime.fourHours/ decanteTime.sum)* 100 || 0}}" min="0" inactive-color="#EBEDF0" active-color="#B81728" use-button-slot bar-height="10px">
+    </van-slider>
+  </view>
+  <view class="flex-col-4 ft-se-12 clr-999">{{decanteTime.fourHours}}</view>
+</view>

@@ -1,0 +1,8 @@
+/* pages/detail/index/components/decanteTime/decanteTime.wxss */
+@import "/css/flex.wxss";
+.mg-10-0{
+  margin: 20rpx 0;
+}
+.mg-10-15 {
+  margin: 20rpx 30rpx;
+}

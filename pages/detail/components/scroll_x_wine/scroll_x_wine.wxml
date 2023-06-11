@@ -1,0 +1,45 @@
+<!--pages/detail/components/scroll_x_wine/scroll_x_wine.wxml-->
+<view>
+  <view class="hot-card-bg">
+    <view style="color: white;display: flex;justify-content: center;align-items: center;padding-top: 40rpx;">此酒庄最佳酒款</view>
+  </view>
+  <!-- <view class="flex-row">
+    <scroll-view scroll-x class="scroll_w" style="margin-top: -180rpx;">
+      <view wx:for="{{wineLists}}" wx:key="index" class="scroll-box">
+        <view class="hot-rate tx-ct">
+        <view class="retatop">
+          <view class="ft-se-20 ft-bd">{{item.rate}}</view>
+          <starRate remark_num="4.6" iconStyle="width:25rpx;height:25rpx"></starRate>
+          <view class="ft-se-12">{{item.num}}条评分</view>
+        </view>
+          
+        </view>
+        <image class="" src="{{item.w_img}}" mode="aspectFit" />
+        <view class="tx-ct mg-tp-10" style="position: absolute;width: 280rpx;">
+          <view class="clr-999 ft-se-14">{{item.num}}</view>
+          <view class="bt_txet">{{item.w_name}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view> -->
+  
+  <view class="flex-row">
+    <scroll-view scroll-x class="scroll_w" style="margin-top: -180rpx;">
+      <view wx:for="{{wineryTop}}" wx:key="index" class="scroll-box" bindtap="toDetail" data-item="{{item}}">
+        <view class="hot-rate tx-ct">
+        <view class="retatop">
+          <view class="ft-se-20 ft-bd">{{item.rate}}</view>
+          <starRate remark_num="{{item.rate}}" iconStyle="width:25rpx;height:25rpx"></starRate>
+          <view class="ft-se-12">{{item.numOfRate}}条评分</view>
+        </view>
+          
+        </view>
+        <image class="scroll_wine_image" src="{{imgUrl}}{{item.wineImg}}" mode="aspectFit" />
+        <view class="tx-ct mg-tp-10" style="position: absolute;width: 280rpx;">
+          <view class="clr-999 ft-se-14">{{item.wineryName}}</view>
+          <view class="bt_txet two_ellipsis">{{item.wineName}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

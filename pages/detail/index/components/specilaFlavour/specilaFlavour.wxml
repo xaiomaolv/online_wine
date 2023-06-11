@@ -1,0 +1,14 @@
+<!--pages/detail/index/components/specilaFlavour/specilaFlavour.wxml-->
+<!-- 风味描述 -->
+<view>
+  <view class="{{!isShowBlurb? 'hiddenmore' : 'showmore'}}">
+    <view class="flex-row mg-0-15 {{index>2 ? 'more-item' : ''}}" wx:for="{{blurbList}}" wx:key="index">
+      <image src="{{item.icon}}" mode="aspectFit" class="blud_logo" />
+      <view class="flex-col mg-0-15 bd-bt-flavour pd-tb-10">
+        <view> {{item.description}}sds </view>
+        <view class="ft-se-12 clr-999"> {{item.name}} <text class="clr-6dc">{{item.count}}</text>人描述有{{item.name}}</view>
+      </view>
+    </view>
+    <view wx:if="{{blurbList.length > 3}}" class="tx-ct clr-pri mg-tp-20 pd-tp-10 bd-tp" bindtap='listToggle'>{{ isShowBlurb ? '收起' : '查看更多' }}</view>
+  </view>
+</view>

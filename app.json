@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/scan/scan",
+    "pages/scan/videoView/videoView"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/detail/",
+      "pages": [
+        "index/index",
+        "downApp/downApp"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/scan/scan": {
+      "network": "all",
+      "packages": [
+        "pages/detail/"
+      ]
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {}
+}

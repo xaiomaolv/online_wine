@@ -1,0 +1,21 @@
+<!--pages/detail/index/components/commentInfo/commentInfo.wxml-->
+<!-- 点评笔记 -->
+<view>
+  <view class="mg-tp-20" wx:for="{{commentInfoList}}" wx:key="index">
+    <view class="flex-row">
+      <image src="{{imgUrl}}{{item.avatarUUID}}" mode="aspectFit" class="avator" />
+      <view class="flex-col mg-lt-10">
+        <view>{{item.username}}</view>
+        <view class="clr-999 ft-se-12">{{item.commentDate}}</view>
+      </view>
+    </view>
+    <view class="tx-lt mg-tp-5">
+      <button class="log_rate mg-rt-10" round size="mini">
+        <van-icon name="star" color="#FCB709" />
+        <text class="clr-rate ft-se-12 mg-lt-5">{{item.rate}}</text>
+      </button>
+      <button class="log_btn" round size="mini">{{item.year}}</button>
+    </view>
+    <view class="ft-se-12 four_ellipsis">{{item.comment}}</view>
+  </view>
+</view>

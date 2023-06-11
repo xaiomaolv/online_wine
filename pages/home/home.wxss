@@ -1,0 +1,29 @@
+/* pages/downApp/downApp.wxss */
+page {
+  width: 100%;
+  /* min-height: 100vh; */
+  overflow-y: hidden;
+  background-color: var(--primary-color);
+}
+
+.btn_w {
+  background-color: black;
+  color: white;
+  border-radius: 50rpx;
+  margin-top: 20rpx;
+  padding: 15rpx 200rpx;
+  letter-spacing:6rpx;
+}
+.camera_icon{
+  width: 35rpx;
+  height: 35rpx;
+}
+.op7 {
+  opacity: 0.7;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

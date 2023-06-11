@@ -1,0 +1,13 @@
+/* pages/detail/index/components/commentInfo/commentInfo.wxss */
+@import "/css/flex.wxss";
+.log_rate {
+  padding: 0 20rpx !important;
+  background-color: var(--rate-bg);
+  border-radius: 30rpx;
+}
+
+.log_btn {
+  padding: 0 20rpx !important;
+  background-color: var(--btn-bg);
+  border-radius: 30rpx;
+}
